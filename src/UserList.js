@@ -94,19 +94,6 @@ const footerNavigation = {
 }
 
 
-const people = [
-  {
-    name: 'Jane Cooper',
-    title: 'Paradigm Representative',
-    role: 'Admin',
-    email: 'janecooper@example.com',
-    telephone: '+1-202-555-0170',
-    imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
-  },
-  // More people...
-]
-
 const UserList = () => {
     const [listOfUSer , setlistOfUSer] = useState([])
     useEffect(()=>{
@@ -239,9 +226,14 @@ const UserList = () => {
                     <div className="flex flex-1 flex-col p-8">
                         <img className="mx-auto h-32 w-32 flex-shrink-0 rounded-full" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" alt="" />
                         <h3 className="mt-6 text-sm font-medium text-gray-900">Name: {user.name}</h3>
-                        <h3 className="mt-2 text-sm font-medium text-gray-900">Username: {user.username}</h3>
-                        <h3 className="mt-2 text-sm text-gray-500">Adress: {user.address.street} <br/> {user.address.suite} 
-                        <br/> {user.address.city}  <br/> {user.address.zipcode}
+                        <h3 className="mt-1 text-sm font-medium text-gray-700">Username: {user.username}</h3>
+                        <h3 className="mt-2 text-sm text-gray-500 flex justify-center "><h3>Adress: </h3>
+                        <ul className='text-left ml-5'>
+                          <li>{user.address.street}</li>
+                          <li>{user.address.suite}</li>
+                          <li>{user.address.city}</li>
+                          <li>{user.address.zipcode}</li>
+                          </ul>
                         </h3>
                         <dl className="mt-1 flex flex-grow flex-col justify-between">
                         <dt className="sr-only">Title</dt>
@@ -284,34 +276,7 @@ const UserList = () => {
             </div>
     
             {/* Logo cloud section */}
-            <div className="mt-32">
-              <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-                <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-24">
-                  <div>
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                      Backed by world-renowned investors
-                    </h2>
-                    <p className="mt-6 max-w-3xl text-lg leading-7 text-gray-500">
-                      Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque
-                      tristique pellentesque. Blandit amet, sed aenean erat arcu morbi. Cursus faucibus nunc nisl netus
-                      morbi vel porttitor vitae ut. Amet vitae fames senectus vitae.
-                    </p>
-                    <div className="mt-6">
-                      <a href="#" className="text-base font-medium text-rose-500">
-                        Meet our investors and advisors&nbsp&rarr;
-                      </a>
-                    </div>
-                  </div>
-                  <div className="mt-12 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
-                    {logos.map((logo) => (
-                      <div key={logo.name} className="col-span-1 flex justify-center bg-gray-50 py-8 px-8">
-                        <img className="max-h-12" src={logo.url} alt={logo.name} />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+            
     
             {/* CTA section */}
             <div className="relative mt-24 sm:mt-32 sm:py-16">
@@ -413,7 +378,7 @@ const UserList = () => {
                 ))}
               </div>
               <p className="mt-8 text-center text-base text-gray-400">
-                &copy; 2022 Your Company, Inc. All rights reserved.
+                &copy; 2022 AnasBeast, Inc. All rights reserved.
               </p>
             </div>
           </footer>
